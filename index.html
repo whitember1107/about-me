@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的個人網頁</title>
+  <title>我的個人網頁 - 生動版</title>
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-Gnf8WqZwP0plP46s0cwH0F9+cxWNx8a2RqYRTc0ZUrJXELPVBWIKBtsHfjY7CMmCk7R1QJXz4Fv0lpQNeO6n0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Slick Carousel CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <style>
     /* 基本 CSS 樣式 */
     body {
@@ -37,6 +41,12 @@
     }
     section {
       padding: 20px;
+      margin-bottom: 40px;
+    }
+    .carousel img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
     footer {
       background: #333;
@@ -60,27 +70,33 @@
   </style>
 </head>
 <body>
-  <header>
+  <header data-aos="fade-down">
     <h1>歡迎來到我的個人網頁</h1>
   </header>
   
-  <nav>
+  <nav data-aos="fade-right">
     <a href="#about">關於我</a>
     <a href="#projects">作品</a>
     <a href="#contact">聯絡我</a>
   </nav>
   
-  <section id="about">
+  <section id="about" data-aos="fade-up">
     <h2>關於我</h2>
     <p>這裡是我的個人簡介，介紹我的背景、興趣與專業技能。</p>
   </section>
   
-  <section id="projects">
+  <section id="projects" data-aos="fade-up">
     <h2>作品</h2>
-    <p>這裡展示我的一些作品與項目。</p>
+    <p>這裡展示我的一些作品與項目，透過圖片輪播來呈現：</p>
+    <!-- Slick Carousel 輪播範例 -->
+    <div class="carousel" data-aos="zoom-in">
+      <div><img src="https://via.placeholder.com/300x200?text=作品1" alt="作品1"></div>
+      <div><img src="https://via.placeholder.com/300x200?text=作品2" alt="作品2"></div>
+      <div><img src="https://via.placeholder.com/300x200?text=作品3" alt="作品3"></div>
+    </div>
   </section>
   
-  <section id="contact">
+  <section id="contact" data-aos="fade-up">
     <h2>聯絡我</h2>
     <p>如果你有任何問題，請透過以下方式聯絡我：</p>
     <ul>
@@ -89,19 +105,41 @@
     </ul>
   </section>
   
-  <footer>
+  <footer data-aos="fade-up">
     <p>版權所有 © 2025 我的個人網頁</p>
   </footer>
   
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJ+Q5qXkK0LSVxY4g8W0ZBqBZO1z9jR+7jz9I=" crossorigin="anonymous"></script>
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-GV9p0R8ErYStTWqs48Cq1I12Lk7vTTxHhR+ovaxl8dSE2gujnW+wJEwMqn6jf7uLIS3cC8XBa0A6CddzN0Z9hQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Slick Carousel JS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script>
-    // JavaScript: 平滑捲動效果
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+    // 初始化 AOS 動畫
+    AOS.init({
+      duration: 800, // 動畫持續時間
+      easing: 'slide', // 動畫緩動效果
+      once: true // 僅觸發一次
+    });
+    
+    // 初始化 Slick Carousel 輪播
+    $(document).ready(function(){
+      $('.carousel').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true
       });
+    });
+    
+    // JavaScript: 平滑捲動效果
+    $('nav a').on('click', function(e) {
+      e.preventDefault();
+      $('html, body').animate({
+        scrollTop: $($(this).attr('href')).offset().top
+      }, 800);
     });
   </script>
 </body>
