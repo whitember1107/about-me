@@ -5,7 +5,7 @@ $('#contactForm').submit(function(e) {
   const message = $('#message').val().trim();
 
   if(name === "" || email === "" || message === "") {
-    alert("請填寫所有欄位！");
+    alert("Please fill in all fields！");
     return;
   }
   
@@ -15,11 +15,11 @@ $('#contactForm').submit(function(e) {
     url: 'send_mail.php', // 這裡指定後端處理檔案的路徑
     data: { name: name, email: email, message: message },
     success: function(response) {
-      alert("感謝您的聯絡，我們將儘快回覆您！");
+      alert("Thanks for your contact.I'll reply you soon！");
       $('#contactForm').trigger('reset');
     },
     error: function() {
-      alert("抱歉，訊息傳送失敗，請稍後再試。");
+      alert("Sorry,the mail couldn't been sent. Please try it again.");
     }
   });
 });
