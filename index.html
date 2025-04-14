@@ -1,146 +1,107 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的個人網頁 - 生動版</title>
-  <!-- AOS CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-Gnf8WqZwP0plP46s0cwH0F9+cxWNx8a2RqYRTc0ZUrJXELPVBWIKBtsHfjY7CMmCk7R1QJXz4Fv0lpQNeO6n0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Slick Carousel CSS -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <style>
-    /* 基本 CSS 樣式 */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: url('https://www.github.com/whitember1107/about-me/nekoheader.jpg');
-      color: #333;
-    }
-    header {
-      background: #4CAF50;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background: #333;
-      overflow: hidden;
-    }
-    nav a {
-      float: left;
-      display: block;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-    nav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-    section {
-      padding: 20px;
-      margin-bottom: 40px;
-    }
-    .carousel img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-    /* 響應式設計 */
-    @media screen and (max-width: 600px) {
-      nav a {
-        float: none;
-        width: 100%;
-      }
-      footer {
-        position: static;
-      }
-    }
-  </style>
+  <title>我的個人網站</title>
+  <!-- 引入 Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- 引入 Font Awesome (圖示) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- 自訂 CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header data-aos="fade-down">
-    <h1>歡迎來到我的個人網頁</h1>
-  </header>
-  
-  <nav data-aos="fade-right">
-    <a href="#about">關於我</a>
-    <a href="#projects">作品</a>
-    <a href="#contact">聯絡我</a>
+
+  <!-- 導覽列 -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">我的網站</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+              aria-label="切換導航">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">關於我</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">作品集</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">聯絡方式</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
-  
-  <section id="about" data-aos="fade-up">
-    <h2>關於我</h2>
-    <p>這裡是我的個人簡介，介紹我的背景、興趣與專業技能。</p>
-  </section>
-  
-  <section id="projects" data-aos="fade-up">
-    <h2>作品</h2>
-    <p>這裡展示我的一些作品與項目，透過圖片輪播來呈現：</p>
-    <!-- Slick Carousel 輪播範例 -->
-    <div class="carousel" data-aos="zoom-in">
-      <div><img src="https://via.placeholder.com/300x200?text=作品1" alt="作品1"></div>
-      <div><img src="https://via.placeholder.com/300x200?text=作品2" alt="作品2"></div>
-      <div><img src="https://via.placeholder.com/300x200?text=作品3" alt="作品3"></div>
+
+  <!-- 頁首區塊 (Hero Section) -->
+  <header class="jumbotron text-center py-5" id="home">
+    <div class="container">
+      <h1 class="display-4">歡迎來到我的個人網站</h1>
+      <p class="lead">我是 [你的名字]，這裡展示我的作品和專業技能</p>
+      <a href="#portfolio" class="btn btn-primary">開始瀏覽</a>
+    </div>
+  </header>
+
+  <!-- 關於我區塊 -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="mb-4">關於我</h2>
+      <p>這裡可以寫一些關於你自己的信息、經歷和專業背景。</p>
     </div>
   </section>
-  
-  <section id="contact" data-aos="fade-up">
-    <h2>聯絡我</h2>
-    <p>如果你有任何問題，請透過以下方式聯絡我：</p>
-    <ul>
-      <li>Email: example@example.com</li>
-      <li>電話: 123-4567890</li>
-    </ul>
+
+  <!-- 作品集區塊 -->
+  <section id="portfolio" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4">作品集</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="作品1">
+            <div class="card-body">
+              <h5 class="card-title">作品1</h5>
+              <p class="card-text">作品描述內容。</p>
+            </div>
+          </div>
+        </div>
+        <!-- 可以複製以上區塊加入更多作品 -->
+      </div>
+    </div>
   </section>
-  
-  <footer data-aos="fade-up">
-    <p>版權所有 © 2025 我的個人網頁</p>
+
+  <!-- 聯絡方式區塊 -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="mb-4">聯絡方式</h2>
+      <form id="contactForm">
+        <div class="mb-3">
+          <label for="name" class="form-label">名字</label>
+          <input type="text" class="form-control" id="name" placeholder="請輸入名字">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="請輸入Email">
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">訊息</label>
+          <textarea class="form-control" id="message" rows="5" placeholder="請輸入訊息"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">送出</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer class="py-4 bg-dark text-white text-center">
+    <div class="container">
+      <p>&copy; 2025 我的個人網站</p>
+    </div>
   </footer>
-  
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJ+Q5qXkK0LSVxY4g8W0ZBqBZO1z9jR+7jz9I=" crossorigin="anonymous"></script>
-  <!-- AOS JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-GV9p0R8ErYStTWqs48Cq1I12Lk7vTTxHhR+ovaxl8dSE2gujnW+wJEwMqn6jf7uLIS3cC8XBa0A6CddzN0Z9hQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- Slick Carousel JS -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script>
-    // 初始化 AOS 動畫
-    AOS.init({
-      duration: 800, // 動畫持續時間
-      easing: 'slide', // 動畫緩動效果
-      once: true // 僅觸發一次
-    });
-    
-    // 初始化 Slick Carousel 輪播
-    $(document).ready(function(){
-      $('.carousel').slick({
-        dots: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 1,
-        adaptiveHeight: true
-      });
-    });
-    
-    // JavaScript: 平滑捲動效果
-    $('nav a').on('click', function(e) {
-      e.preventDefault();
-      $('html, body').animate({
-        scrollTop: $($(this).attr('href')).offset().top
-      }, 800);
-    });
-  </script>
+
+  <!-- 引入 Bootstrap JavaScript (包含 Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 選用 jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- 自訂 JavaScript -->
+  <script src="js/script.js"></script>
 </body>
 </html>
