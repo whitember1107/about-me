@@ -1,0 +1,22 @@
+/* style.css */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
+
+/* 頁首區塊，這裡使用背景圖片並調整文字色彩 */
+.jumbotron {
+  background: url('https://via.placeholder.com/1200x500') no-repeat center center/cover;
+  color: #fff;
+}
+
+/* 各區塊間距 */
+section {
+  margin: 50px 0;
+}
+
+/* 頁尾樣式 */
+footer {
+  background-color: #333;
+  padding: 20px 0;
+}
