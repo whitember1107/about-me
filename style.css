@@ -2,6 +2,8 @@
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
+  background: url('') no-repeat center center fixed;
+  background-size: cover;
 }
 
 /* 頁首區塊，這裡使用背景圖片並調整文字色彩 */
